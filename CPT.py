@@ -1,4 +1,20 @@
-'''
+# All the account stuff
+
+accounts = ["ApplePie23","StrayMango38","GrayOwl57"]
+scores = [5, 9, 6]
+user_acnt = input("What is your username? If you do not have one, what would you like it to be?")
+
+def check_acnt(account):
+ if account in accounts:
+  print("We found your account!")
+ else:
+  print("We are adding your account now!")
+  accounts.append(account)
+  scores.append(0)
+
+check_acnt(user_acnt)
+
+# All the game stuff
 import turtle as t
 import random as r
 import time as tm
@@ -44,15 +60,16 @@ def run_game(x,y):
   y = r.choice(range(-300,300))
   j.goto(x,y)
  print("You clicked the turtle",  count,  "times!")
+ ind = accounts.index(user_acnt)
+ if count > scores[ind]:
+  var = scores[ind]
+  scores.remove(var)
+  scores.insert(ind,count)
+  print("You reached a new highscore!")
+ else:
+  print("You did not reach a new highscore. Your highscore is", scores[ind],"!")
 
 j.onclick(add)
 st.onclick(run_game)
 wn = t.Screen()
 wn.mainloop()
-'''
-
-user_acnt = input("What is your username? If you do not have one, what would you like it to be?")
-accounts = ["ApplePie23","StrayMango38","SSGLowtaper"]
-
-def check_acnt(account):
- 
