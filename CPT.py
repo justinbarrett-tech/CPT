@@ -1,7 +1,7 @@
 # All the account stuff
 
 accounts = ["ApplePie23","StrayMango38","GrayOwl57","Dxnte_707","sizzle","JB"]
-scores = [5, 9, 6, 5, 11, 9]
+scores = [5, 9, 6, 5, 11, 11]
 user_acnt = input("What is your username? If you do not have one, what would you like it to be? \n")
 
 def check_acnt(account):
@@ -45,6 +45,11 @@ w.penup()
 w.goto(-30,50)
 w.write("START", font="Arial")
 
+w2 = t.Turtle()
+w2.hideturtle()
+w2.penup()
+w2.goto(-155,300)
+
 count = 0
 
 def add(x,y):
@@ -60,9 +65,10 @@ def run_game(color,nth):
  st.hideturtle()
  st.goto(400,400)
  j.showturtle()
+ w2.write("Click The Moving Turtle!", font=("Arial", 20))
  for i in range(1,5):
-  x = r.choice(range(-300,300))
-  y = r.choice(range(-300,300))
+  x = r.choice(range(-300,290))
+  y = r.choice(range(-300,290))
   j.goto(x,y)
  print("You clicked the turtle",  count,  "times!")
  ind = accounts.index(user_acnt)
@@ -72,8 +78,7 @@ def run_game(color,nth):
   scores.insert(ind,count)
   print("You reached a new highscore!")
  else:
-  print("You did not reach a new highscore. Your highscore is", scores[ind],"!")
-
+  print("You did not reach a new highscore. Your highscore is", scores[ind])
 
 j.onclick(add)
 st.onclick(lambda x,y: run_game(user_color,nth))
