@@ -60,6 +60,9 @@ w3.hideturtle()
 w3.penup()
 w3.goto(-155,300)
 
+# Turtle for screen
+wn = t.Screen()
+
 # Gets a point counter set up
 count = 0
 
@@ -89,6 +92,12 @@ def run_game(color,nth):
   y = r.choice(range(-300,290))
   j.goto(x,y)
  j.hideturtle()
+ w3.clear()
+ w3.goto(-150,0)
+ w3.write("GOOD JOB!", font=("DM Sans", 40))
+ w.clear()
+ w2.clear()
+ wn.bgcolor("light slate blue")
  print("You clicked the turtle",  count,  "times!")
  ind = accounts.index(user_acnt)
  if count > scores[ind]:
@@ -110,5 +119,4 @@ nth = 0
 j.onclick(add)
 # Starts game only after st is pressed
 st.onclick(lambda x,y: run_game(user_color,nth))
-wn = t.Screen()
 wn.mainloop()
