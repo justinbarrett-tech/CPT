@@ -1,7 +1,7 @@
 # All the account stuff
 
 accounts = ["ApplePie23","StrayMango38","GrayOwl57","Dxnte_707","sizzle","JB"]
-scores = [5, 9, 6, 5, 11, 11]
+scores = [5, 9, 6, 5, 11, 5]
 user_acnt = input("What is your username? If you do not have one, what would you like it to be? \n")
 
 def check_acnt(account):
@@ -77,6 +77,8 @@ def run_game(color,nth):
   scores.remove(var)
   scores.insert(ind,count)
   print("You reached a new highscore!")
+ elif count == scores[ind]:
+  print("You matched your highscore!")
  else:
   print("You did not reach a new highscore. Your highscore is", scores[ind])
 
