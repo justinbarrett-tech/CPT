@@ -14,10 +14,14 @@ def check_acnt(account):
 
 check_acnt(user_acnt)
 
+color = input("What color would you like the turtle to be?")
 # All the game stuff
 import turtle as t
 import random as r
 import time as tm
+
+nth = 0
+
 
 j = t.Turtle()
 j.hideturtle()
@@ -47,7 +51,8 @@ def add(x,y):
  global count
  count = count + 1
 
-def run_game(x,y):
+def run_game(color,nth):
+ j.color(color)
  w.clear()
  w.penup()
  w.goto(400,400)
@@ -69,7 +74,8 @@ def run_game(x,y):
  else:
   print("You did not reach a new highscore. Your highscore is", scores[ind],"!")
 
+
 j.onclick(add)
-st.onclick(run_game)
+st.onclick(run_game(color,nth))
 wn = t.Screen()
 wn.mainloop()
