@@ -1,8 +1,8 @@
 # All the account stuff
 
-accounts = ["ApplePie23","StrayMango38","GrayOwl57"]
-scores = [5, 9, 6]
-user_acnt = input("What is your username? If you do not have one, what would you like it to be?")
+accounts = ["ApplePie23","StrayMango38","GrayOwl57","Dxnte_707","sizzle","JB"]
+scores = [5, 9, 6, 5, 11, 9]
+user_acnt = input("What is your username? If you do not have one, what would you like it to be? \n")
 
 def check_acnt(account):
  if account in accounts:
@@ -14,7 +14,8 @@ def check_acnt(account):
 
 check_acnt(user_acnt)
 
-color = input("What color would you like the turtle to be?")
+user_color = input("What color would you like the moving turtle to be? \n")
+
 # All the game stuff
 import turtle as t
 import random as r
@@ -27,7 +28,6 @@ j = t.Turtle()
 j.hideturtle()
 j.penup()
 j.shape("turtle")
-j.color("blue")
 j.left(90)
 j.shapesize(4)
 j.speed(1)
@@ -76,6 +76,6 @@ def run_game(color,nth):
 
 
 j.onclick(add)
-st.onclick(run_game(color,nth))
+st.onclick(lambda x,y: run_game(user_color,nth))
 wn = t.Screen()
 wn.mainloop()
