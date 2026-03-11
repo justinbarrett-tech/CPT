@@ -1,7 +1,7 @@
 # All the account stuff
 # Lists for accounts and scores tied to those accounts by index
 accounts = ["ApplePie23","StrayMango38","GrayOwl57","Dxnte_707","sizzle","JB"]
-scores = [5, 9, 6, 5, 11, 5]
+scores = [5, 9, 6, 5, 11, 8]
 
 # Gets user_account
 user_acnt = input("What is your username? If you do not have one, what would you like it to be? \n")
@@ -41,26 +41,35 @@ st.shapesize(5)
 st.color("green")
 st.showturtle()
 
-# Turtle for writing start
+# Turtle for writing start and point header
 w = t.Turtle()
 w.hideturtle()
 w.penup()
 w.goto(-30,50)
 w.write("START", font="Arial")
 
-# Turtle for writing the top words
+# Turtle for writing current score
 w2 = t.Turtle()
 w2.hideturtle()
 w2.penup()
-w2.goto(-155,300)
+w2.goto(265,295)
+
+# Turtle for writing the top words
+w3 = t.Turtle()
+w3.hideturtle()
+w3.penup()
+w3.goto(-155,300)
 
 # Gets a point counter set up
 count = 0
 
-# Add function to keep track of points
+# Add function to keep track of 
+# points and point counter
 def add(x,y):
  global count
- count = count + 1
+ count += 1
+ w2.clear()
+ w2.write(count, font=("Arial", 15))
 
 # Function for running the game so that 
 # after the button is pressed the game runs
@@ -68,16 +77,18 @@ def run_game(color,nth):
  j.color(color)
  w.clear()
  w.penup()
- w.goto(400,400)
+ w.goto(200,295)
  st.penup()
  st.hideturtle()
  st.goto(400,400)
  j.showturtle()
- w2.write("Click The Moving Turtle!", font=("Arial", 20))
+ w3.write("Click The Moving Turtle!", font=("Arial", 20))
+ w.write("Score:", font =("Arial", 15))
  for i in range(1,5):
   x = r.choice(range(-300,290))
   y = r.choice(range(-300,290))
   j.goto(x,y)
+ j.hideturtle()
  print("You clicked the turtle",  count,  "times!")
  ind = accounts.index(user_acnt)
  if count > scores[ind]:
@@ -89,7 +100,7 @@ def run_game(color,nth):
   print("You matched your highscore!")
  else:
   print("You did not reach a new highscore. Your highscore is", scores[ind])
-
+ 
 # Helps give another arguement to ensure 
 # the code runs when clicked
 nth = 0
