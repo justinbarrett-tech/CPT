@@ -1,12 +1,14 @@
 # All the account stuff
-# Lists for accounts and scores tied to those accounts by index
+# Lists for accounts and scores tied
+# to those accounts by index
 accounts = ["ApplePie23","StrayMango38","GrayOwl57","Dxnte_707","sizzle","JB"]
 scores = [5, 9, 6, 5, 11, 8]
 
 # Gets user_account
 user_acnt = input("What is your username? If you do not have one, what would you like it to be? \n")
 
-# Checks if user_acnt in list of accounts and adds it if not
+# Checks if user_acnt in list of 
+# accounts and adds it if not
 if user_acnt in accounts:
  print("We found your account!")
 else:
@@ -14,8 +16,8 @@ else:
  accounts.append(user_acnt)
  scores.append(0)
 
-# Asks the user what color it wants j to be
-# to be used later on
+# Asks the user what color it wants j
+# to be to be used later on
 user_color = input("What color would you like the moving turtle to be? \n")
 
 # All the game stuff
@@ -117,6 +119,8 @@ nth = 0
 # Where it calls all the functions
 # Adds to points for each click
 j.onclick(add)
+
 # Starts game only after st is pressed
 st.onclick(lambda x,y: run_game(user_color,nth))
+
 wn.mainloop()
