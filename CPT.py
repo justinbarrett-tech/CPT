@@ -25,7 +25,7 @@ user_color = input("What color would you like the moving turtle to be? \n")
 color_list = ["snow", "ghost white", "white smoke", "gainsboro", "floral white", "old lace", "linen",
     "antique white", "papaya whip", "blanched almond", "bisque", "peach puff", "navajo white",
     "moccasin", "cornsilk", "ivory", "lemon chiffon", "seashell", "honeydew", "mint cream",
-    "azure", "alice blue", "lavender", "lavender blush", "misty rose", "white", "dark slate gray", "dim gray", "slate gray", "light slate gray", "gray",
+    "azure", "alice blue", "lavender", "lavender blush", "misty rose", "dark slate gray", "dim gray", "slate gray", "light slate gray", "gray",
     "light grey", "midnight blue", "navy", "cornflower blue", "dark slate blue", "slate blue",
     "medium slate blue", "light slate blue", "medium blue", "royal blue", "blue", "dodger blue",
     "deep sky blue", "sky blue", "light sky blue", "steel blue", "light steel blue",
@@ -130,7 +130,7 @@ def run_game(color,nth):
  w3.write("GOOD JOB!", font=("DM Sans", 40))
  w.clear()
  w2.clear()
- wn.bgcolor("light slate blue")
+ wn.bgcolor(r.choice(color_list))
  print("You clicked the turtle",  count,  "times!")
  ind = accounts.index(user_acnt)
  if count > scores[ind]:
