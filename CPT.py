@@ -126,7 +126,7 @@ def run_game(color,nth):
   j.goto(x,y)
  j.hideturtle()
  w3.clear()
- w3.goto(-150,0)
+ w3.goto(-150,-20)
  w3.write("GOOD JOB!", font=("DM Sans", 40))
  w.clear()
  w2.clear()
@@ -151,7 +151,8 @@ nth = 0
 # Adds to points for each click
 j.onclick(add)
 
-# Starts game only after st is pressed
+# Starts game only after start
+# button is pressed
 st.onclick(lambda x,y: run_game(user_color,nth))
 
 wn.mainloop()
