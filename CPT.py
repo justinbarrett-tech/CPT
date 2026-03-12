@@ -1,4 +1,6 @@
 # All the account stuff
+# Import random
+import random as r
 # Lists for accounts and scores tied
 # to those accounts by index
 accounts = ["ApplePie23","StrayMango38","GrayOwl57","Dxnte_707","sizzle","JB"]
@@ -19,11 +21,40 @@ else:
 # Asks the user what color it wants j
 # to be to be used later on
 user_color = input("What color would you like the moving turtle to be? \n")
+# Got color_list from another student
+color_list = ["snow", "ghost white", "white smoke", "gainsboro", "floral white", "old lace", "linen",
+    "antique white", "papaya whip", "blanched almond", "bisque", "peach puff", "navajo white",
+    "moccasin", "cornsilk", "ivory", "lemon chiffon", "seashell", "honeydew", "mint cream",
+    "azure", "alice blue", "lavender", "lavender blush", "misty rose", "white", "dark slate gray", "dim gray", "slate gray", "light slate gray", "gray",
+    "light grey", "midnight blue", "navy", "cornflower blue", "dark slate blue", "slate blue",
+    "medium slate blue", "light slate blue", "medium blue", "royal blue", "blue", "dodger blue",
+    "deep sky blue", "sky blue", "light sky blue", "steel blue", "light steel blue",
+    "light blue", "powder blue", "pale turquoise", "dark turquoise", "medium turquoise",
+    "turquoise", "cyan", "light cyan", "cadet blue", "medium aquamarine", "aquamarine",
+    "dark green", "dark olive green", "dark sea green", "sea green", "medium sea green",
+    "light sea green", "pale green", "spring green", "lawn green", "medium spring green",
+    "green yellow", "lime green", "yellow green", "forest green", "olive drab", "dark khaki",
+    "khaki", "pale goldenrod", "light goldenrod yellow", "light yellow", "yellow", "gold",
+    "light goldenrod", "goldenrod", "dark goldenrod", "rosy brown", "indian red",
+    "saddle brown", "sienna", "peru", "burlywood", "beige", "wheat", "sandy brown",
+    "tan", "chocolate", "firebrick", "brown", "dark salmon", "salmon", "light salmon",
+    "orange", "dark orange", "coral", "light coral", "tomato", "orange red", "red", "hot pink",
+    "deep pink", "pink", "light pink", "pale violet red", "maroon", "medium violet red",
+    "violet red", "magenta", "violet", "plum", "orchid", "medium orchid", "dark orchid",
+    "dark violet", "blue violet", "purple", "medium purple", "thistle"]
+# Checks if user_color in colorlist 
+# and fixes it if not 
+if user_color not in color_list:
+  user_color = r.choice(color_list)
+  print("Your color is not valid so we chose", user_color, "for you!")
 
 # All the game stuff
-# Importing things
+# Importing turtles
 import turtle as t
-import random as r
+
+# Turtle for screen
+wn = t.Screen()
+wn.bgcolor("black")
 
 # Define turtles and add characteristics
 # Moving/Clicking turtle
@@ -45,6 +76,7 @@ st.showturtle()
 
 # Turtle for writing start and point header
 w = t.Turtle()
+w.pencolor("white")
 w.hideturtle()
 w.penup()
 w.goto(-30,50)
@@ -52,18 +84,17 @@ w.write("START", font="Arial")
 
 # Turtle for writing current score
 w2 = t.Turtle()
+w2.pencolor("white")
 w2.hideturtle()
 w2.penup()
 w2.goto(265,295)
 
 # Turtle for writing the top words
 w3 = t.Turtle()
+w3.pencolor("white")
 w3.hideturtle()
 w3.penup()
 w3.goto(-155,300)
-
-# Turtle for screen
-wn = t.Screen()
 
 # Gets a point counter set up
 count = 0
