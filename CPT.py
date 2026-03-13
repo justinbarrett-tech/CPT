@@ -3,8 +3,10 @@
 import random as r
 # Lists for accounts and scores tied
 # to those accounts by index
-accounts = ["ApplePie23","StrayMango38","GrayOwl57","Dxnte_707","sizzle","JB"]
-scores = [5, 9, 6, 5, 11, 8]
+with open("accounts.txt", "r") as file:
+ accounts = file.read().splitlines()
+with open("scores.txt", "r") as file2:
+  scores = file2.read().splitlines()
 
 # Gets user_account
 user_acnt = input("What is your username? If you do not have one, what would you like it to be? \n")
@@ -12,9 +14,15 @@ user_acnt = input("What is your username? If you do not have one, what would you
 # Checks if user_acnt in list of 
 # accounts and adds it if not
 if user_acnt in accounts:
- print("We found your account!")
+  print("We found your account!")
 else:
  print("We are adding your account now!")
+ with open("accounts.txt", "a") as file3:
+  file3.write("\n")
+  file3.write(user_acnt)
+ with open("scores.txt", "a") as file4:
+  file4.write("\n")
+  file4.write(str(0))
  accounts.append(user_acnt)
  scores.append(0)
 
@@ -138,6 +146,10 @@ def run_game(color,nth):
   scores.remove(var)
   scores.insert(ind,count)
   print("You reached a new highscore!")
+  with open("scores.txt", "w") as file5:
+    for i in scores:
+     file5.write("\n")
+     file5.write(str(i))
  elif count == scores[ind]:
   print("You matched your highscore!")
  else:
