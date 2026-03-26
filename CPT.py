@@ -157,7 +157,7 @@ def run_game(color,nth):
   print("You did not reach a new highscore. Your highscore is", scores[ind])
  
 # Helps give another arguement to ensure 
-# the code runs when clicked
+# the code runs when the start button is clicked
 nth = 0
 
 # Where it calls all the functions
@@ -169,9 +169,3 @@ j.onclick(add)
 st.onclick(lambda x,y: run_game(user_color,nth))
 
 wn.mainloop()
-
-
-
-
-#Code successfully uses a parameter to insert user input. It also has a loop as well as a conditional statement and a list.
-#Run_game satisfies all of the criteria in order to get a passing grade on the AP test.
